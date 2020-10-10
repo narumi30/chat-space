@@ -17,7 +17,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 
 ## Association
 - has_many :users, through: groups_users
@@ -29,6 +29,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|groups_id|integer|null: false, foreign_key: true|
 |image|string| |
 |text|string| |
 
