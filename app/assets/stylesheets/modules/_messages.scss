@@ -17,7 +17,6 @@
     align-items: center;
   }
   .side-box {
-    // background-color: #d8d8d8;
     color: #ffffff;
     width: 260px;
     height: 20px;
@@ -43,25 +42,20 @@
 }
 
 .group-list {
-    // border: 1px solid #667422;
   background-color: #2f3e51;
   height: calc(100vh - 100px);
   padding: 0 20px;
   .group {
-    // border: solid 1px #ffffff;
     width: 260px;
     height: 105px;
     padding: 20px 0 40px;
     color: #ffffff;
     &--name {
-      // border: solid 1px #ffffff;
       font-size: 15px;
     }
     &--message {
       font-size: 11px;
       margin-top: 5px;
-      // margin: 20px 0 0 0;
-      // border: solid 1px #ffffff;
     }
   }
 }
@@ -110,9 +104,7 @@
   .post-message {
     margin-bottom: 46px;
   }
-  // .post-message_info {
-  //   display:flex;
-  // }
+
   .post-message__userName {
     color: #333333;
     font-size: 16px;
