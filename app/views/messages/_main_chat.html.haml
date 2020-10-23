@@ -1,0 +1,25 @@
+.chat-main
+  .chat-main__header
+    .chat-main__group
+      .chat-main__memberName test
+      %ul.member-list 
+        Member：
+        %li.member a
+    = link_to "#", class: "chat-main__editlink" do
+      Edit
+  .message-field
+    .post-message
+      .post-message__info
+        .post-message__userName
+          masa
+          .post-message__date 2019/11/20(Wed) 17:43:01
+      .message
+        %p.message__content おはよう！
+  .footer
+    %form.new-message
+      .form-contents
+        %input.textform{type: 'text' , placeholder: 'type a message'}
+          %label{class: "text-box__image"}
+            = icon('fas', 'image', class: "fas-image")
+            %input.hidden{type: "file"}
+      %input.send_btn{type: 'submit' , value: 'Send'}
