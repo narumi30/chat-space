@@ -31,7 +31,8 @@
     }
     .iconlist {
       display: flex;
-      .icon__btn--edit {
+      
+      .far-edit {
         margin-right: 5px;
       }
       a {
@@ -83,6 +84,9 @@
       display: flex;
       margin-top: 15px;;
     }
+    .member-name {
+      padding-right: 5px;
+    }
     .chat-main__editlink {
       display: block;
       border: 1px solid #38aef0;
@@ -95,6 +99,9 @@
       text-decoration: none;
       display :flex;
       justify-content: space-between;
+      a {
+        color: #38aef0;
+      }
     }
   }
 }
@@ -103,6 +110,7 @@
   background-color: #fafafa;
   height: calc(100vh - 190px);
   padding:35px 40px 0px;
+  overflow: scroll;
   .post-message {
     margin-bottom: 46px;
   }
@@ -119,12 +127,20 @@
   }
 }
 
+.post-message__info {
+
+}
 .message {
   margin-top: 12px;
+
   &__content {
     color: #434A54;
     font-size: 14px;
   }
+}
+
+.Message__image {
+
 }
 
 .footer {
@@ -157,7 +173,7 @@
   right: 10px;
 }
 
-.fas-image {
+.far-image {
   font-size: 25px;
   line-height: 50px;
 }
