@@ -1,25 +1,40 @@
 .chat-main
   .chat-main__header
     .chat-main__group
-      .chat-main__memberName test
-      %ul.member-list 
+      .chat-main__memberName
+        = @group.name
+        -# = current_user.groups.name
+        -# = f.label :name, "グループ名"
+      %ul.member-list
         Member：
-        %li.member a
-    = link_to "#", class: "chat-main__editlink" do
-      Edit
+        - @group.users.each do |users|
+          %li.member-name= users.name
+        -# %li.member a
+    -# = link_to edit_group_path, class: "chat-main__editlink" do
+    .chat-main__editlink
+      = link_to edit_group_path(@group) do
+        Edit
   .message-field
-    .post-message
-      .post-message__info
-        .post-message__userName
-          masa
-          .post-message__date 2019/11/20(Wed) 17:43:01
-      .message
-        %p.message__content おはよう！
+    = render @messages
+    -# .post-message
+    -#   .post-message__info
+    -#     .post-message__userName
+    -#       masa
+    -#       .post-message__date 2019/11/20(Wed) 17:43:01
+    -#   .message
+    -#     %p.message__content おはよう！
   .footer
-    %form.new-message
+    -# %form.new-message
+    -#   .form-contents
+    -#     %input.textform{type: 'text' , placeholder: 'type a message'}
+    -#       %label{class: "text-box__image"}
+    -#         = icon('fas', 'image', class: "fas-image")
+    -#         %input.hidden{type: "file"}
+    -#   %input.send_btn{type: 'submit' , value: 'Send'}
+    = form_with model: [@group, @message], html: {class: "new-message"}, local: true do |f|
       .form-contents
-        %input.textform{type: 'text' , placeholder: 'type a message'}
-          %label{class: "text-box__image"}
-            = icon('fas', 'image', class: "fas-image")
-            %input.hidden{type: "file"}
-      %input.send_btn{type: 'submit' , value: 'Send'}
+        = f.text_field :content, class: 'textform', placeholder: 'type a message'
+        = f.label :image, class: 'text-box__image' do
+          = icon('far', 'image', class: 'far-image')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'send_btn'
